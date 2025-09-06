@@ -21,4 +21,4 @@ This is my Tic-Tac-Toe game with a modern scoreband - I've given it a pun modern
 ## 🛠️ Installation  
 1. **Clone the repository**  
    ```sh
-   git clone https://github.com/laoluah/Tic-Tac-Toe.git
+   git clone [https://github.com/laoluah/Tic-Tac-Toe.git](https://github.com/laoluah/Tiki-Taka-Toe---Orange)
