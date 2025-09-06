@@ -1,644 +1,153 @@
-* {
-  margin: 0%;
-  padding: 0%;
-}
-
-.full {
-  color: white;
-  background-color: #915E00;
-  text-align: center;
-}
-
-.scoreBoard {
-  position: absolute;
-  background-color: #fff;
-  border: 3px solid black;
-  height: fit-content;
-  width: 26vw;
-  margin-left: 30px;
-  margin-right: 30px;
-  color: #000000;
-  padding: 0px 20px;
-}
-
-.yes {
-  display: flex;
-}
-
-.play-board {
-  display: none;
-}
-
-.avt {
-  height: 80px;
-  border-radius: 50%;
-}
-
-.line {
-  border: 2px dashed black;
-}
-
-.useravt-img {
-  display: flex;
-  justify-content: space-between;
-}
-
-.user1-avt img {
-  height: 100px;
-  border-radius: 50%;
-}
-
-.user2-avt img {
-  height: 100px;
-  border-radius: 50%;
-}
-
-.uname {
-  height: 35px;
-  width: 300px;
-  padding-left: 5px;
-  border-radius: 10px;
-}
-
-/* HIDE RADIO */
-[type=radio] {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* IMAGE STYLES */
-[type=radio]+img {
-  cursor: pointer;
-  margin: 10px;
-}
-
-/* CHECKED STYLES */
-[type=radio]:checked+img {
-  outline: 10px solid #ffa500;
-}
-
-.scoreCount {
-  display: flex;
-  justify-content: space-around;
-  font-size: 30px;
-}
-
-.names {
-  display: flex;
-  justify-content: space-between;
-}
-
-.data {
-  margin: 0 auto;
-  padding-top: 15px;
-  background-color: #6c6c6c;
-  height: 85vh;
-  width: 40vw;
-  border: 5px solid rgb(0, 0, 0);
-}
-
-
-
-.target {
-  font-weight: bolder;
-  font-size: 30px;
-}
-
-#goal {
-  height: 40px;
-  width: 50px;
-  border: 3px solid black;
-  border-radius: 30%;
-  font-size: 20px;
-  padding-left: 7px;
-}
-
-.container {
-  height: 68vh;
-  width: 80vh;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000000;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-p {
-  font-family: Jazz LET, fantasy;
-}
-
-h1 {
-  font-family: Jazz LET, fantasy;
-  font-size: cal(2rem, 8%);
-}
-
-.boxes {
-  height: 60vmin;
-  width: 60vmin;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.7vmin;
-  background-color: #ffa500;
-  border-radius: 22px;
-  border: 3.99px solid black;
-}
-
-.box {
-  height: 32.5%;
-  width: 32.5%;
-  font-size: 10vmin;
-  color: orange;
-  background-color: white;
-}
-
-#tr {
-  border-top-right-radius: 20px;
-}
-
-#tl {
-  border-top-left-radius: 20px;
-}
-
-#br {
-  border-bottom-right-radius: 20px;
-}
-
-#bl {
-  border-bottom-left-radius: 20px;
-}
-
-/*button start*/
-
-.resetBtn {
-  /* Variables */
-  --button_radius: 0.75em;
-  --button_color: #e8e8e8;
-  --button_outline_color: #000000;
-  font-size: 15px;
-  font-weight: bold;
-  border: none;
-  border-radius: var(--button_radius);
-  background: var(--button_outline_color);
-}
-
-.button_top {
+/* ===== Profile Image ===== */
+.profile-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%; /* circle */
+  border: 4px solid #0078ff; /* blue border */
+  box-shadow: 0 0 15px rgba(0,120,255,0.5); /* subtle glow */
+  margin: 1rem auto;
   display: block;
-  box-sizing: border-box;
-  border: 2px solid var(--button_outline_color);
-  border-radius: var(--button_radius);
-  padding: 0.7em 1.5em;
-  background: var(--button_color);
-  color: var(--button_outline_color);
-  transform: translateY(-0.2em);
-  transition: transform 0.1s ease;
 }
 
-button:hover .button_top {
-  /* Pull the button upwards when hovered */
-  transform: translateY(-0.33em);
-}
-
-button:active .button_top {
-  /* Push the button downwards when pressed */
-  transform: translateY(0);
-}
-
-/*button end */
-
-/*title*/
-/* === removing default button style ===*/
-.but {
-  margin: 35%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: auto;
-  background: black;
-  border: 10px solid black;
-  border-radius: 10px;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
-
-
-/*get start button*/
-/* From Uiverse.io by adamgiebl */
-.cssbuttons-io-button {
-  background: #ffa500;
-  color: white;
-  font-family: inherit;
-  padding: 0.35em;
-  padding-left: 1.2em;
-  font-size: 17px;
-  font-weight: 500;
-  border-radius: 0.9em;
-  border: none;
-  letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  box-shadow: inset 0 0 1.6em -0.6em #ffa500;
-  overflow: hidden;
-  position: relative;
-  height: 2.8em;
-  padding-right: 3.3em;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cssbuttons-io-button .icon {
-  background: white;
-  margin-left: 1em;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.2em;
-  width: 2.2em;
-  border-radius: 0.7em;
-  box-shadow: 0.1em 0.1em 0.6em 0.2em #000000;
-  right: 0.3em;
-  transition: all 0.3s;
-}
-
-.cssbuttons-io-button:hover .icon {
-  width: calc(100% - 0.6em);
-}
-
-.cssbuttons-io-button .icon svg {
-  width: 1.1em;
-  transition: transform 0.3s;
-  color: #000000;
-}
-
-.cssbuttons-io-button:hover .icon svg {
-  transform: translateX(0.1em);
-}
-
-.cssbuttons-io-button:active .icon {
-  transform: scale(0.95);
-}
-
-
-/* button styling */
-.but {
-  --border-right: 6px;
-  --text-stroke-color: rgba(255, 255, 255, 0.6);
-  --animation-color: #ff9437;
-  --fs-size: 2.3em;
-  letter-spacing: 3px;
-  text-decoration: none;
-  font-size: var(--fs-size);
-  font-family: "Arial";
-  position: relative;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
-}
-
-/* this is the text, when you hover on button */
-.hover-text {
-  position: absolute;
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 0%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color);
-}
-
-/* hover */
-.but:hover .hover-text {
-  width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color))
-}
-
-/* new game button*/
-
-.newgameBtn {
-
-  margin-left: 44%;
-  --😀: #ffa500;
-  --😀😀: #B37400;
-  --😀😀😀: #915E00;
-  cursor: pointer;
-  width: 184px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 1.125em;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #fff;
-  background: var(--😀);
-  border: 2px solid var(--😀😀);
-  border-radius: .75rem;
-  box-shadow: 0 8px 0 var(--😀😀);
-  transform: skew(-10deg);
-  transition: all .1s ease;
-  filter: drop-shadow(0 15px 20px var(--😀😀😀));
-}
-
-.newgameBtn:active {
-  letter-spacing: 0px;
-  transform: skew(-10deg) translateY(8px);
-  box-shadow: 0 0 0 var(--😀😀😀);
-}
-
-/* END*/
-
-.hide {
-  display: none;
-}
-
-p {
-  font-size: 35px;
-}
-
-.showWin {
-  margin: 0px;
-  padding: 0px;
-  ;
-}
-
-/*for carousel*/
-
-.wrapper {
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  padding: 0px 20px 0px 20px;
-}
-
-.wrapper i {
-  height: 40px;
-  width: 40px;
-  background: #ffa500;
-  text-align: center;
-  line-height: 42px;
-  border-radius: 50%;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  font-size: 1.25 rem;
-  transform: translateY(-50%);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-
-}
-
-.wrapper i:first-child {
-  left: -22px;
-
-}
-
-.wrapper i:last-child {
-  right: -22px;
-
-}
-
-.wrapper .carousel {
+/* ===== Audio Portfolio Styling ===== */
+.audio-grid {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 3) - 12px);
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: 0;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
-.carousel::-webkit-scrollbar {
-  display: none;
+@media (min-width: 768px) {
+  .audio-grid {
+    grid-template-columns: 1fr 1fr; /* two columns on desktop */
+  }
 }
 
-.carousel :where(.card, .img) {
+.audio-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.audio-card:hover {
+  transform: translateY(-4px);
+}
+
+.audio-card h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.audio-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* ===== Player Controls ===== */
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.play-button {
+  background: #0078ff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s ease;
+  font-size: 1rem;
 }
 
-.carousel.dragging {
-  scroll-snap-type: none;
-  scroll-behavior: auto;
+.play-button:hover {
+  background: #005fcc;
 }
 
-.carousel.no-transition {
-  scroll-behavior: auto;
+.progress-container {
+  flex: 1;
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
 }
 
-@media (min-width: 1500px) {
-  .yes {
-    margin-top: 50px;
-  }
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: #0078ff;
+  border-radius: 3px;
 }
 
-@media screen and (max-width: 900px) {
-  .wrapper .carousel {
-    grid-auto-columns: calc((100% / 2) - 9px);
-
-  }
+.time {
+  font-size: 0.8rem;
+  min-width: 80px;
+  text-align: right;
+  color: #555;
 }
 
-@media screen and (max-width: 600px) {
-  .wrapper .carousel {
-    grid-auto-columns: 100%;
-
-  }
+/* ===== Volume Controls ===== */
+.volume-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-
-@media (max-width: 1150px) {
-  .yes {
-    flex-wrap: wrap;
-  }
-
-  .data {
-    width: 70%;
-    margin: 20px auto;
-    position: static;
-
-  }
-
-  .scoreBoard {
-    width: 50%;
-    margin: 20px auto;
-    position: static;
-  }
-
-  .container {
-    width: 90%;
-    height: auto;
-    padding: 20px 0;
-  }
-
-  .boxes {
-    width: 90vw;
-    height: 90vw;
-  }
-
-  .box {
-    font-size: 8vw;
-  }
-
-  .newgameBtn {
-    margin: 20px auto;
-    display: block;
-  }
-
-  .but {
-    margin: 20px auto;
-    font-size: 6vw;
-    text-align: center;
-  }
-
-  .uname {
-    width: 90%;
-  }
-
-  .cssbuttons-io-button {
-    width: 80%;
-    font-size: 1rem;
-  }
-
-  .carousel {
-    grid-auto-columns: 45% !important;
-  }
+.volume-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 1.1rem;
 }
 
-@media (max-width: 680px) {
-  .but {
-    margin: 8px auto;
-  }
-
-  .scoreBoard {
-    padding: 0 10px;
-    width: 70%;
-
-  }
-
-  .boxes {
-    width: 95vw;
-    height: 95vw;
-    gap: 1vw;
-  }
-
-  .box {
-    font-size: 10vw;
-  }
-
-  .data {
-    width: 95vw;
-  }
-
-  .scoreBoard>h1 {
-    font-size: 1.8rem;
-  }
-
-  .names {
-    font-size: 1rem;
-    ;
-  }
-
-  .scoreCountS {
-    gap: 10px;
-    text-align: center;
-  }
-
-  .wrapper {
-    width: 90%;
-  }
-
-  .but {
-    font-size: 5vw;
-    padding: 10px;
-  }
-
-  .target {
-    font-size: 1.2rem;
-  }
-
-  .newgameBtn {
-    width: 70%;
-    font-size: 1rem;
-  }
-
-  .showWin {
-    font-size: 1.2rem;
-  }
-
-  .cssbuttons-io-button {
-    font-size: 1rem;
-    height: 3rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
+.volume-slider {
+  width: 80px;
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
 }
 
+.volume-progress {
+  height: 100%;
+  width: 100%;
+  background: #0078ff;
+  border-radius: 3px;
+}
 
-@media (max-width: 480px) {
-  .container {
-    width: 100%;
-  }
+/* ===== Tabs ===== */
+.portfolio-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  gap: 0.5rem;
+}
 
-  .user1-avt img {
-    height: 70px;
-  }
+.tab-button {
+  background: #f1f1f1;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
 
-  .user2-avt img {
-    height: 70px;
-  }
-
-  .scoreBoard>h1 {
-    font-size: 1.5rem;
-  }
-
-  .names {
-    font-size: 0.8rem;
-    ;
-  }
-
-  .names h3 {
-    font-size: 1.2rem;
-  }
-
-  .names h4 {
-    font-size: 1rem;
-  }
-
-  .boxes {
-    width: 100%;
-    gap: 1vw;
-  }
-
-  .scoreBoard {
-    margin: 10px auto;
-    padding: 0 10px;
-    width: 80vw;
-  }
-
-
-  .user1-avt img {
-    height: 85px;
-  }
-
-  .user2-avt img {
-    height: 85px;
-  }
-
+.tab-button.active,
+.tab-button:hover {
+  background: #0078ff;
+  color: #fff;
 }
