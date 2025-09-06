@@ -1,15 +1,15 @@
 # 🎮 Tic-Tac-Toe Game 🎯  
 
-**Live 🔗:** [My Tic-Tac-Toe Game](https://dsameer-infine8.github.io/Tic-Tac-Toe/)
+**Live 🔗:** [My Tic-Tac-Toe Game](https://laoluah.github.io/Tic-Tac-Toe/)
 
 
-A modern and feature-rich Tic-Tac-Toe game with a scoreboard, target wins, and avatar selection. Built using **HTML, CSS, and JavaScript**.  
+This is my Tic-Tac-Toe game with a modern scoreband - I've given it a pun modern and feature-rich Tic-Tac-Toe game with a scoreboard, target wins, and avatar selection. Built using **HTML, CSS, and JavaScript**.  
 
 ## 🚀 Features  
 ✅ **Scoreboard** to track wins, losses, and ties  
 ✅ **Target to Win** - Set a custom goal to decide the match  
-✅ **Avatar Selection** - Choose unique avatars for both players  
-✅ **Interactive UI** with animations and responsive design  
+✅ **Avatar Choices** - Choose unique avatars for both players  
+✅ **Interactive UI** I've tried to make it animations and responsive design  
 ✅ **Reset & New Game Options** for continuous play  
 
 ## 📸 Screenshots  
