@@ -1,6 +1,6 @@
 # 🎮 Tic-Tac-Toe Game 🎯  
 
-**Live 🔗:** [My Tic-Tac-Toe Game](https://laoluah.github.io/Tic-Tac-Toe/)
+**Live 🔗:** [My Tic-Tac-Toe Game](https://laoluah.github.io/Tiki-Taka-Toe---Orange/)
 
 
 This is my Tic-Tac-Toe game with a modern scoreband - I've given it a pun modern and feature-rich Tic-Tac-Toe game with a scoreboard, target wins, and avatar selection. Built using **HTML, CSS, and JavaScript**.  
@@ -21,4 +21,4 @@ This is my Tic-Tac-Toe game with a modern scoreband - I've given it a pun modern
 ## 🛠️ Installation  
 1. **Clone the repository**  
    ```sh
-   git clone https://github.com/laoluah/Tiki-Taka-Toe---Orange.git
+   git clone [https://github.com/laoluah/Tiki-Taka-Toe---Orange.git](https://laoluah.github.io/Tiki-Taka-Toe---Orange/)
