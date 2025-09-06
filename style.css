@@ -1,153 +1,60 @@
-/* ===== Profile Image ===== */
-.profile-image {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 50%; /* circle */
-  border: 4px solid #0078ff; /* blue border */
-  box-shadow: 0 0 15px rgba(0,120,255,0.5); /* subtle glow */
-  margin: 1rem auto;
-  display: block;
-}
+/* Tic-Tac-Toe Game Style */
 
-/* ===== Audio Portfolio Styling ===== */
-.audio-grid {
+/* Board Layout */
+.board {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin: 20px auto;
 }
 
-@media (min-width: 768px) {
-  .audio-grid {
-    grid-template-columns: 1fr 1fr; /* two columns on desktop */
-  }
-}
-
-.audio-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-
-.audio-card:hover {
-  transform: translateY(-4px);
-}
-
-.audio-card h3 {
-  margin-bottom: 0.25rem;
-  font-size: 1.2rem;
-  color: #222;
-}
-
-.audio-card p {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-/* ===== Player Controls ===== */
-.player-controls {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.play-button {
-  background: #0078ff;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
+/* Board cells */
+.cell {
+  background-color: #f0e68c;
+  border: 2px solid #daa520;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease;
-  font-size: 1rem;
-}
-
-.play-button:hover {
-  background: #005fcc;
-}
-
-.progress-container {
-  flex: 1;
-  height: 6px;
-  background: #eee;
-  border-radius: 3px;
+  font-size: 2rem;
   cursor: pointer;
-  position: relative;
 }
 
-.progress-bar {
-  height: 100%;
-  width: 0;
-  background: #0078ff;
-  border-radius: 3px;
+/* Hover effect */
+.cell:hover {
+  background-color: #fffacd;
 }
 
-.time {
-  font-size: 0.8rem;
-  min-width: 80px;
-  text-align: right;
-  color: #555;
-}
-
-/* ===== Volume Controls ===== */
-.volume-controls {
+/* Scoreboard (modern style) */
+.scoreboard {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.volume-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #333;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background: #ffe4b5;
+  padding: 10px;
+  border-radius: 10px;
   font-size: 1.1rem;
 }
 
-.volume-slider {
-  width: 80px;
-  height: 6px;
-  background: #eee;
-  border-radius: 3px;
-  cursor: pointer;
-  position: relative;
+/* Current game status */
+.status {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
 }
 
-.volume-progress {
-  height: 100%;
-  width: 100%;
-  background: #0078ff;
-  border-radius: 3px;
-}
-
-/* ===== Tabs ===== */
-.portfolio-tabs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-  gap: 0.5rem;
-}
-
-.tab-button {
-  background: #f1f1f1;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-}
-
-.tab-button.active,
-.tab-button:hover {
-  background: #0078ff;
+/* Buttons */
+.btn {
+  padding: 8px 16px;
+  background-color: #ffa500;
   color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ff8c00;
 }
