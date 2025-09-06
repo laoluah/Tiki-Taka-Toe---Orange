@@ -1,77 +1,97 @@
-const board = document.getElementById('board');
-const cells = board.querySelectorAll('.cell');
-const newGameBtn = document.getElementById('newGameBtn');
-const resetBtn = document.getElementById('resetBtn');
-const scoreO = document.getElementById('scoreO');
-const scoreX = document.getElementById('scoreX');
-const scoreT = document.getElementById('scoreT');
+const board = document.getElementById("board");
+const startBtn = document.getElementById("startBtn");
+const resetBtn = document.getElementById("resetBtn");
+const targetScore = document.getElementById("targetScore");
+const playerX = document.getElementById("playerX");
+const playerO = document.getElementById("playerO");
+const scoreX = document.getElementById("scoreX");
+const scoreO = document.getElementById("scoreO");
+const message = document.getElementById("message");
 
-let boardState = ['', '', '', '', '', '', '', '', ''];
-let currentPlayer = 'X';
-let scores = { X: 0, O: 0, T: 0 };
+let currentPlayer = "X";
+let moves = [];
+let gameActive = false;
+let scores = { X: 0, O: 0 };
+let target = 1;
 
-const winPatterns = [
-  [0,1,2],[3,4,5],[6,7,8],
-  [0,3,6],[1,4,7],[2,5,8],
-  [0,4,8],[2,4,6]
-];
-
-function handleCellClick(e) {
-  const idx = e.target.dataset.index;
-  if (boardState[idx]) return;
-  boardState[idx] = currentPlayer;
-  e.target.textContent = currentPlayer;
-  if (checkWin(currentPlayer)) {
-    scores[currentPlayer]++;
-    updateScores();
-    highlightWin(currentPlayer);
-  } else if (boardState.every(v => v !== '')) {
-    scores.T++;
-    updateScores();
-  } else {
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+function createBoard() {
+  board.innerHTML = "";
+  moves = Array(9).fill("");
+  for (let i = 0; i < 9; i++) {
+    const cell = document.createElement("div");
+    cell.addEventListener("click", () => makeMove(i));
+    board.appendChild(cell);
   }
 }
 
-function checkWin(player) {
+function makeMove(index) {
+  if (!gameActive || moves[index] !== "") return;
+  moves[index] = currentPlayer;
+  board.children[index].textContent = currentPlayer;
+  if (checkWinner()) {
+    scores[currentPlayer]++;
+    updateScore();
+    if (scores[currentPlayer] >= target) {
+      message.textContent = `Player ${currentPlayer} wins the game!`;
+      gameActive = false;
+    } else {
+      message.textContent = `Player ${currentPlayer} wins this round!`;
+      setTimeout(startRound, 1000);
+    }
+  } else if (!moves.includes("")) {
+    message.textContent = "It's a draw!";
+    setTimeout(startRound, 1000);
+  } else {
+    switchPlayer();
+  }
+}
+
+function switchPlayer() {
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
+  updateActivePlayer();
+}
+
+function updateActivePlayer() {
+  playerX.classList.toggle("active", currentPlayer === "X");
+  playerO.classList.toggle("active", currentPlayer === "O");
+}
+
+function updateScore() {
+  scoreX.textContent = scores.X;
+  scoreO.textContent = scores.O;
+}
+
+function checkWinner() {
+  const winPatterns = [
+    [0,1,2], [3,4,5], [6,7,8],
+    [0,3,6], [1,4,7], [2,5,8],
+    [0,4,8], [2,4,6]
+  ];
   return winPatterns.some(pattern =>
-    pattern.every(i => boardState[i] === player)
+    pattern.every(i => moves[i] === currentPlayer)
   );
 }
 
-function highlightWin(player) {
-  winPatterns.forEach(pattern => {
-    if (pattern.every(i => boardState[i] === player)) {
-      pattern.forEach(i => cells[i].classList.add('win'));
-    }
-  });
-  setTimeout(resetBoard, 1000);
+function startRound() {
+  message.textContent = "";
+  createBoard();
+  updateActivePlayer();
 }
 
-function updateScores() {
-  scoreX.textContent = scores.X;
-  scoreO.textContent = scores.O;
-  scoreT.textContent = scores.T;
+function startGame() {
+  target = parseInt(targetScore.value);
+  scores = { X: 0, O: 0 };
+  updateScore();
+  currentPlayer = "X";
+  gameActive = true;
+  startRound();
 }
 
-function resetBoard() {
-  boardState = boardState.map(() => '');
-  cells.forEach(c => {
-    c.textContent = '';
-    c.classList.remove('win');
-  });
+function resetGame() {
+  location.reload();
 }
 
-function resetAll() {
-  scores = { X: 0, O: 0, T: 0 };
-  updateScores();
-  resetBoard();
-}
+startBtn.addEventListener("click", startGame);
+resetBtn.addEventListener("click", resetGame);
 
-cells.forEach(cell => cell.addEventListener('click', handleCellClick));
-newGameBtn.addEventListener('click', resetBoard);
-resetBtn.addEventListener('click', resetAll);
-
-// Initialize board
-resetBoard();
-updateScores();
+createBoard();
