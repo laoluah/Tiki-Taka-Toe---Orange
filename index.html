@@ -1,44 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tic‑Tac‑Toe — Tiki‑Taka‑Toe</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="wrapper">
-    <h1>TIC TAC TOE</h1>
-    <button id="newGameBtn">NEW GAME</button>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-    <div class="scoreboard">
-      <div class="panel">
-        <div>Player O</div><div id="scoreO">0</div>
-      </div>
-      <div class="panel">
-        <div>Tie</div><div id="scoreT">0</div>
-      </div>
-      <div class="panel">
-        <div>Player X</div><div id="scoreX">0</div>
-      </div>
-    </div>
+.container {
+  text-align: center;
+}
 
-    <div class="board" id="board">
-      <!-- 9 clickable cells -->
-      <div class="cell" data-index="0"></div>
-      <div class="cell" data-index="1"></div>
-      <div class="cell" data-index="2"></div>
-      <div class="cell" data-index="3"></div>
-      <div class="cell" data-index="4"></div>
-      <div class="cell" data-index="5"></div>
-      <div class="cell" data-index="6"></div>
-      <div class="cell" data-index="7"></div>
-      <div class="cell" data-index="8"></div>
-    </div>
+.game-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
 
-    <button id="resetBtn">Reset Scores</button>
-  </div>
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 30px;
+}
 
-  <script src="logic.js"></script>
-</body>
-</html>
+.player {
+  font-size: 1.2rem;
+}
+
+.player.active {
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.board div {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+#message {
+  font-size: 1.2rem;
+  color: green;
+}
